@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import {Redirect} from 'react-router-dom'
+import { token$, updateToken } from '../../store'
 
 const Login = () => {
+    const [token] = useState(token$.value)
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(false)
@@ -11,9 +13,11 @@ const Login = () => {
     const handleLogin = (e) =>{
         e.preventDefault()
         let source = axios.CancelToken.source()
-        axios.post('http://localhost:5000/api/users/login-user', { username, password }, {cancelToken: source.token})
+        axios.post('http://localhost:5000/api/users/login-user', { username, password }, { headers: { Authorization: "Bearer " + token }}, {cancelToken: source.token})
         .then((res) => {
             console.log(res);
+            updateToken(res.data.token); // Token
+            window.localStorage.setItem("token", res.data.token)  // Saving token in localStorage
             setToDashboard(true)
             setUsername([])
             setPassword([])
