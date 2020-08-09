@@ -26,8 +26,6 @@ const Register = () => {
                 console.log(err.response.data.message)
             //setError(err.message);
             setError(err.response.data.message)
-            setUsername([])
-            setPassword([])
             }
         });
         return () =>{source.cancel()}
