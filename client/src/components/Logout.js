@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { updateToken } from '../../store'
+import { updateToken } from '../store'
 import { Redirect } from 'react-router-dom';
 
 const Logout = () => {
@@ -15,7 +15,7 @@ const Logout = () => {
     return (
         <div>
             {toLogin ? <Redirect to="/login" /> : null}
-            <button onClick={handleLogout}>LOGOUT</button>
+            <button onClick={handleLogout}>LOGOUT dashboard</button>
         </div>
     )
 }
