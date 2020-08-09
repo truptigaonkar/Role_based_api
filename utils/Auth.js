@@ -13,7 +13,7 @@ const userRegister = async (userDets, role, res) => {
     let usernameNotTaken = await validateUsername(userDets.username);
     if (!usernameNotTaken) {
       return res.status(400).json({
-        message: `Username is already taken.`,
+        message: `Username is already registered, please user different Username.`,
         success: false
       });
     }
@@ -22,7 +22,7 @@ const userRegister = async (userDets, role, res) => {
     let emailNotRegistered = await validateEmail(userDets.email);
     if (!emailNotRegistered) {
       return res.status(400).json({
-        message: `Email is already registered.`,
+        message: `Email is already registered, please user different Email Address.`,
         success: false
       });
     }
@@ -38,7 +38,7 @@ const userRegister = async (userDets, role, res) => {
 
     await newUser.save();
     return res.status(201).json({
-      message: "Hurry! now you are successfully registred. Please nor login.",
+      message: "Congratulation! You are registred successfully. Please login.",
       success: true
     });
   } catch (err) {
