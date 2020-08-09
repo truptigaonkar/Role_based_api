@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "23b70880-4c20-40c0-b048-70d979498bde",
+		"name": "role-based-api-postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Normal user register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"mark.waugh\",\n    \"email\": \"mark.waugh@gmail.com\",\n    \"name\":\"Mark Waugh\",\n    \"password\":\"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/users/register-user",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"register-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Normal user login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"mark.waugh\",\n    \"email\": \"mark.waugh@gmail.com\",\n    \"name\":\"Mark Waugh\",\n    \"password\":\"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/users/login-user",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"login-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Normal user profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWYyY2Y3ZTAzYzI1YzMyOGRhMWJlMzQ0Iiwicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6Im1hcmsud2F1Z2giLCJlbWFpbCI6Im1hcmsud2F1Z2hAZ21haWwuY29tIiwiaWF0IjoxNTk2NzgyOTk5LCJleHAiOjE1OTczODc3OTl9.5BRrzHj-9gEAqtUgArTgxKpBMDCqjQRySJl1lTHSiK4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/api/users/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"john.doe.admin\",\n    \"email\": \"john.doe@gmail.com\",\n    \"name\":\"John Doe\",\n    \"password\":\"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/users/register-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"register-admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"john.doe.admin\",\n    \"email\": \"john.doe@gmail.com\",\n    \"name\":\"John Doe\",\n    \"password\":\"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/users/login-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"login-admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWYyY2ZiNjUzOTRjZGEzMDE5MWZlMjg5Iiwicm9sZSI6ImFkbWluIiwidXNlcm5hbWUiOiJqb2huLmRvZS5hZG1pbiIsImVtYWlsIjoiam9obi5kb2VAZ21haWwuY29tIiwiaWF0IjoxNTk2NzgzNTExLCJleHAiOjE1OTczODgzMTF9.GD-58Gx00eEDdfHAjmEeuMik4mQV4y210umvSfD_jHA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/api/users/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Super admin register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"virat.kohli.superadmin\",\n    \"email\": \"virat.kohli@gmail.com\",\n    \"name\":\"Virat Kohli\",\n    \"password\":\"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/users/register-super-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"register-super-admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Super admin login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"virat.kohli.superadmin\",\n    \"email\": \"virat.kohli@gmail.com\",\n    \"name\":\"Virat Kohli\",\n    \"password\":\"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/users/login-super-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"login-super-admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Super admin profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWYyY2ZjZTIzOTRjZGEzMDE5MWZlMjhiIiwicm9sZSI6InN1cGVyYWRtaW4iLCJ1c2VybmFtZSI6InZpcmF0LmtvaGxpLnN1cGVyYWRtaW4iLCJlbWFpbCI6InZpcmF0LmtvaGxpQGdtYWlsLmNvbSIsImlhdCI6MTU5Njc4Mzg4OSwiZXhwIjoxNTk3Mzg4Njg5fQ.3THPWUgB8BMfG113Q5pucDE5Kd0B1J_PhJfUPZxw7ok",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/api/users/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
