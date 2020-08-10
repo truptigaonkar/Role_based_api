@@ -31,23 +31,17 @@ const Dashboard = () => {
     }, [token]);
 
     return (
-        <div>
+        <>
             <h4>Dashboard</h4>
+            <Logout />
             <div style={{color:'red'}}>{error && <div><b>{error}</b></div>}</div>
-            {profileData ? (
-                <>
-                    <Logout />
-                    <p><b>Id: </b>{profileData._id}</p>
-                    <p><b>Username: </b>{profileData.username}</p>
-                    <p><b>Name: </b>{profileData.name}</p>
-                    <p><b>Email: </b>{profileData.email}</p>
-                    <p><b>Created at: </b>{profileData.createdAt}</p>
-                    <p><b>Updated at: </b>{profileData.updatedAt}</p>
-                </>
-            ) : (
-                <b>Unauthorized profile... Please login first....</b>
-              )} 
-        </div>
+                <p><b>Id: </b>{profileData._id}</p>
+                <p><b>Username: </b>{profileData.username}</p>
+                <p><b>Name: </b>{profileData.name}</p>
+                <p><b>Email: </b>{profileData.email}</p>
+                <p><b>Created at: </b>{profileData.createdAt}</p>
+                <p><b>Updated at: </b>{profileData.updatedAt}</p>
+        </>
     )
 }
 
