@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { updateToken } from '../store'
+import { updateToken } from '../../store'
 import { Redirect } from 'react-router-dom';
 
 const Logout = () => {

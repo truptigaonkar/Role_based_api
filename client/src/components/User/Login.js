@@ -34,7 +34,7 @@ const Login = () => {
 
     return (
         <div>
-            <h4>Login</h4>
+            <h4>USER Login</h4>
             {toDashboard ? <Redirect to="/dashboard" /> : null}
             <div style={{color:'red'}}>{error && <div><b>{error}</b></div>}</div>
             <form onSubmit={handleLogin}>

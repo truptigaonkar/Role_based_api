@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom'
 import './App.css';
-import Home from '../Home';
+import Home from '../User/Home';
 import Login from '../User/Login';
 import Register from '../User/Register';
 import Dashboard from '../User/Dashboard';
@@ -22,11 +22,8 @@ function App() {
         <nav>
           <ul>
             <li><Link to="/">Home</Link></li>
-              {/* <li><Link to="/register">Register</Link></li>  
-              <li><Link to="/dashboard">Dashboard</Link></li>
-              <li><Link to="/login">Login</Link></li>  */}
-             {!window.localStorage.getItem('token') ? <Link to="/register">Register</Link> : null}
-             {!window.localStorage.getItem('token') ? <Link to="/login">Login</Link> : null}
+            <li>{!window.localStorage.getItem('token') ? <Link to="/register">Register</Link> : null}</li>
+            <li>{!window.localStorage.getItem('token') ? <Link to="/login">Login</Link> : null}</li>
           </ul>
         </nav>
         <Route exact path="/" component={Home}/>

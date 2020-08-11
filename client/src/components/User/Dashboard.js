@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import { token$, updateToken } from '../../store'
-import Logout from '../Logout';
+import Logout from './Logout';
 import Userinfo from './Userinfo';
 
 const Dashboard = () => {
@@ -34,7 +34,7 @@ const Dashboard = () => {
     return (
         <>
             Welcome, {profileData.name}! <Logout />
-            <h4>Dashboard</h4>
+            <h4>USER Dashboard</h4>
             <div style={{color:'red'}}>{error && <div><b>{error}</b></div>}</div>
                 <Userinfo profileData={profileData}/>
         </>
