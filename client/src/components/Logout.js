@@ -15,7 +15,7 @@ const Logout = () => {
     return (
         <div>
             {toLogin ? <Redirect to="/login" /> : null}
-            <button onClick={handleLogout}>LOGOUT dashboard</button>
+            <button onClick={handleLogout}>LOGOUT</button>
         </div>
     )
 }
